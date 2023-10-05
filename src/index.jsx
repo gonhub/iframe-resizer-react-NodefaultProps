@@ -5,8 +5,7 @@ import warning from 'warning'
 
 import filterIframeAttribs from './filter-iframe-attribs'
 
-const IframeResizer = (props) => {
-  const { title, forwardRef, ...rest } = props
+const IframeResizer = (title = 'iframe', forwarRef, ...rest) => {
   const iframeProps = filterIframeAttribs(rest)
   const iframeRef = useRef(null)
 
@@ -40,10 +39,6 @@ const IframeResizer = (props) => {
   }))
 
   return <iframe title={title} {...iframeProps} ref={iframeRef} />
-}
-
-IframeResizer.defaultProps = {
-  title: 'iframe',
 }
 
 IframeResizer.propTypes = {
