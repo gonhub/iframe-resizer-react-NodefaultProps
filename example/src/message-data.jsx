@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const MessageData = (props) => {
-  const { data } = props
+const MessageData = ({data = undefined}) => {
 
   return data ? (
     data.message ? (
@@ -19,10 +18,6 @@ const MessageData = (props) => {
       </span>
     )
   ) : null
-}
-
-MessageData.defaultProps = {
-  data: undefined,
 }
 
 MessageData.propTypes = {
